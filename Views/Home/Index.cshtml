@@ -7,31 +7,9 @@
 
 <!--This loop is to iterate through the created books model with each book's info in the database'-->
 @foreach (Book b in Model.Books)
-    {
-        <div class="card card-outline-primary m-1 p-1">
-            <div class="bg-faded p-1">
-                <h4>
-                    @b.Title
-
-                    <span class="badge badge-pill badge-primary">
-                        <ul>
-                            <li><small>Author: @b.Author</small></li>
-                            <li><small>Category: @b.Category</small></li>
-                            <li><small>Classification: @b.Classification</small></li>
-                            <li><small>PageCount: @b.PageCount</small></li>
-                            <li><small>Publisher: @b.Publisher</small></li>
-                            <li><small>Isbn: @b.Isbn</small></li>
-                            <li><small>Price: @b.Price</small></li>
-                        </ul>
-
-                    </span>
-                    <br />
-                </h4>
-
-            </div>
-            @*<div class="card-text p-1">@b.Description</div>*@
-        </div>
-    }
+{
+    <partial name="BookstoreSummary" model="b"/>
+}
 
 <div page-blah="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
      page-class="btn" page-class-normal="btn-outline-dark"

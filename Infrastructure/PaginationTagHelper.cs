@@ -25,7 +25,7 @@ namespace cah264_mission09.Infrastructure
 
         [ViewContext]
         [HtmlAttributeNotBound]
-        public ViewContext vc { get; set; }
+        public ViewContext vc { get; set; } 
 
         //different than view context
         public PageInfo PageBlah { get; set; }
@@ -53,10 +53,9 @@ namespace cah264_mission09.Infrastructure
                 if (PageClassesEnabled)
                 {
                     tb.AddCssClass(PageClass);
-                    tb.AddCssClass(i == PageBlah.CurrentPage
-                        ? PageClassSelected : PageClassNormal);
+                    tb.AddCssClass(i == PageBlah.CurrentPage ? PageClassSelected : PageClassNormal);
                 }
-
+                tb.AddCssClass(PageClass);
                 tb.InnerHtml.Append(i.ToString());
 
                 final.InnerHtml.AppendHtml(tb);
