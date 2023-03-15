@@ -1,0 +1,33 @@
+﻿@{
+}
+
+@model Order
+
+<h2>Check Out Now</h2>
+<p>Please enter your details, and we will get your order to you!</p>
+
+<form method="post" asp-controller="Cart" asp-action="Checkout">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <h4>Ship To</h4>
+    <div class="form-group">
+        <label asp-for="Name">Name:</label><input asp-for="Name" class="form-control" />
+    </div>
+
+    <h4>Address</h4>
+    <div class="form-group">
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone">Phone:</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+
+    <div class="float-end">
+        <input class="btn btn-primary" type="submit" value="Send Order" />
+    </div>
+
+</form>
